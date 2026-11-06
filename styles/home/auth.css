@@ -34,6 +34,7 @@
 }
 
 .auth-box button {
+  font-size: 15px;
   padding: 12px;
   background-color: #185FA5;  
   color: white;            
@@ -49,4 +50,26 @@
 
 .auth-box a {
   color: #185FA5;              
+}
+
+/* make inputs and dropdown match */
+.auth-box input,
+.auth-box select {
+  padding: 10px;
+  border: 1px solid #B5D4F4;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
+/* checkboxes: no padding or border */
+.auth-box input[type="checkbox"] {
+  padding: 0;
+  margin-right: 8px;
+}
+
+/* error message: red, no extra space */
+#error {
+  color: #E24B4A;
+  margin: 0;
 }

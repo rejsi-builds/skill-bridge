@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up - SkillBridge</title>
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/home/auth.css">
+</head>
+<body class="auth-page">
+
+  <div class="auth-box">
+
+    <a href="welcome.html"><img src="../../images/SkillBridge.png" alt="SkillBridge"></a>
+
+    <h1>Create your account</h1>
+    <p>Only for Epoka University students</p>
+
+    <form id="signupForm" action="explore.html">
+
+      <label>Full name</label>
+      <input type="text" required>
+
+      <label>Email</label>
+      <input type="email" id="email" placeholder="name@epoka.edu.al" required>
+
+      <label>Major</label>
+      <select required>
+        <option value="">Choose your major</option>
+        <option>Architecture</option>
+        <option>Civil Engineering</option>
+        <option>Computer Engineering</option>
+        <option>Electronics and Digital Communication Engineering</option>
+        <option>Software Engineering</option>
+        <option>Business Administration</option>
+        <option>Economics</option>
+        <option>Business Informatics</option>
+        <option>Banking and Finance</option>
+        <option>International Marketing and Logistics Management</option>
+        <option>Law</option>
+        <option>Political Science and International Relations</option>
+      </select>
+
+      <label>Interests</label>
+      <label><input type="checkbox"> Programming</label>
+      <label><input type="checkbox"> Design</label>
+      <label><input type="checkbox"> Languages</label>
+      <label><input type="checkbox"> Photography</label>
+      <label><input type="checkbox"> Music</label>
+
+      <label>Skills related to your major</label>
+      <input type="text" placeholder="e.g. Java, AutoCAD">
+
+      <label>Password</label>
+      <input type="password" required>
+
+      <p id="error"></p>
+
+      <button type="submit">Sign up</button>
+
+    </form>
+
+    <p>Already have an account? <a href="login.html">Log in</a></p>
+
+  </div>
+
+  <script src="../../scripts/home/signup.js"></script>
+</body>
+</html>
