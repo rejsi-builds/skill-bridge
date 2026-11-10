@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Journey - SkillBridge</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/learning/dashboard.css">
+    <link rel="stylesheet" href="../../styles/learning/schedule.css">
+    <link rel="stylesheet" href="../../styles/learning/modal.css">
+</head>
+
+<body class="dashboard-page">
+
+    <div class="container">
+
+        <div class="row">
+            <a class="back" href="user.html">← Back to profile</a>
+            <a class="back" href="../teaching.html">Teach a skill →</a>
+        </div>
+
+        <!-- Welcome -->
+        <h1 id="welcomeTitle">Welcome back!</h1>
+        <p class="subtitle" id="welcomeText"></p>
+
+        <!-- Overall progress -->
+        <div class="box">
+            <div class="row">
+                <h3>Overall Progress</h3>
+                <strong id="overallPercent">0%</strong>
+            </div>
+            <div class="bar big">
+                <div id="overallBar"></div>
+            </div>
+            <small id="overallText"></small>
+        </div>
+
+        <!-- Tabs -->
+        <div class="box">
+
+            <div class="tabs">
+                <button class="tab active" id="coursesButton" onclick="showTab('courses')">My Courses</button>
+                <button class="tab" id="scheduleButton" onclick="showTab('schedule')">Schedule</button>
+                <button class="tab" id="tasksButton" onclick="showTab('tasks')">Tasks</button>
+            </div>
+
+            <!-- My Courses -->
+            <div id="coursesTab">
+                <div class="row">
+                    <p class="hint">Click a course to see its content and assignments.</p>
+
+                    <div class="toolbar">
+                        <select id="courseFilter" onchange="renderCourses()">
+                            <option value="all">All</option>
+                            <option value="inprogress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                        <button onclick="openTakeCourse()">+ Take Course</button>
+                    </div>
+                </div>
+
+                <div class="course-list" id="courseList"></div>
+            </div>
+
+            <!-- Schedule -->
+            <div id="scheduleTab" class="hidden">
+                <p class="hint">Your upcoming webinars.</p>
+                <div id="scheduleList"></div>
+            </div>
+
+            <!-- Tasks -->
+            <div id="tasksTab" class="hidden">
+                <p class="hint">Keep track of your coursework and upcoming deadlines.</p>
+                <div id="taskList"></div>
+            </div>
+
+        </div>
+
+        <!-- Course details window -->
+        <div class="box courseContent hidden" id="coursePanel">
+            <button class="close" onclick="closeCourse()">✕</button>
+            <h2 class="panel-heading">
+                <i class="bi bi-journal-text"></i>Course Content &amp; Materials
+            </h2>
+
+            <div class="course-info">
+                <h3 id="detailTitle"></h3>
+                <p class="hint" id="detailLecturer"></p>
+            </div>
+
+            <div id="detailBody"></div>
+        </div>
+
+    </div>
+
+
+    <!-- Lesson window: the text and file the lecturer posted -->
+    <div class="modal-bg" id="lessonModal">
+        <div class="modal-box wide">
+            <button class="close" onclick="closeModal('lessonModal')">✕</button>
+            <h2 id="lessonTitle"></h2>
+            <p class="hint" id="lessonInfo"></p>
+
+            <p class="reading" id="lessonText"></p>
+            <div id="lessonFile"></div>
+
+            <div class="buttons">
+                <button class="light" onclick="closeModal('lessonModal')">Close</button>
+                <button id="lessonDone" onclick="markLessonDone()">Mark as done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Take course window -->
+    <div class="modal-bg" id="takeModal">
+        <div class="modal-box">
+            <button class="close" onclick="closeModal('takeModal')">✕</button>
+            <h2>Take a Course</h2>
+            <p class="hint">Courses from the Teach tab that you have not taken yet.</p>
+            <div id="availableList"></div>
+        </div>
+    </div>
+
+
+    <script src="../../scripts/shared/store.js"></script>
+    <script src="../../scripts/learning/data.js"></script>
+    <script src="../../scripts/learning/schedule.js"></script>
+    <script src="../../scripts/learning/tasks.js"></script>
+    <script src="../../scripts/learning/lesson.js"></script>
+    <script src="../../scripts/learning/dashboard.js"></script>
+</body>
+
+</html>
