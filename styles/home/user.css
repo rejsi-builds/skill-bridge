@@ -1,0 +1,128 @@
+user.css
+
+.user-page {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #E6F1FB;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.subtitle {
+    color: #5a6b7d;
+    margin: 6px 0 24px;
+}
+
+/* Card on the left, buttons on the right */
+.layout {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #B5D4F4;
+    color: #185FA5;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-info h2 {
+    margin: 0 0 16px;
+}
+
+.label {
+    font-size: 13px;
+    color: #5a6b7d;
+    margin: 12px 0 2px;
+}
+
+.value {
+    font-weight: bold;
+    margin: 0;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #E6F1FB;
+    color: #185FA5;
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin: 0 6px 6px 0;
+    font-size: 13px;
+}
+
+/* Learn and Teach: stacked vertically */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 260px;
+}
+
+.action {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.action strong {
+    font-size: 20px;
+}
+
+.learn {
+    background-color: #185FA5;
+    color: white;
+}
+
+.learn:hover {
+    background-color: #0C447C;
+}
+
+.teach {
+    background-color: white;
+    color: #185FA5;
+    border: 2px solid #185FA5;
+}
+
+.teach:hover {
+    background-color: #B5D4F4;
+}
+
+/* On small screens the buttons go side by side under the card */
+@media (max-width: 700px) {
+    .actions {
+        flex-direction: row;
+        width: 100%;
+    }
+}
