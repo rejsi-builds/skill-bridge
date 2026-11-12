@@ -1,5 +1,3 @@
-user.js
-
 // Profile page: display the logged-in user's details
 // currentUser is defined in store.js
 
