@@ -17,7 +17,7 @@
     <div class="container">
 
         <div class="row">
-            <a class="back" href="user.html">← Back to profile</a>
+            <a class="back" href="../learning/user.html">← Back to profile</a>
             <a class="back" href="../teaching.html">Teach a skill →</a>
         </div>
 
@@ -41,9 +41,9 @@
         <div class="box">
 
             <div class="tabs">
-                <button class="tab active" id="coursesButton" onclick="showTab('courses')">My Courses</button>
-                <button class="tab" id="scheduleButton" onclick="showTab('schedule')">Schedule</button>
-                <button class="tab" id="tasksButton" onclick="showTab('tasks')">Tasks</button>
+                <button class="tab active" id="coursesButton">My Courses</button>
+                <button class="tab" id="scheduleButton">Schedule</button>
+                <button class="tab" id="tasksButton">Tasks</button>
             </div>
 
             <!-- My Courses -->
@@ -52,12 +52,12 @@
                     <p class="hint">Click a course to see its content and assignments.</p>
 
                     <div class="toolbar">
-                        <select id="courseFilter" onchange="renderCourses()">
+                        <select id="courseFilter">
                             <option value="all">All</option>
                             <option value="inprogress">In Progress</option>
                             <option value="completed">Completed</option>
                         </select>
-                        <button onclick="openTakeCourse()">+ Take Course</button>
+                        <button id="takeButton">+ Take Course</button>
                     </div>
                 </div>
 
@@ -72,15 +72,15 @@
 
             <!-- Tasks -->
             <div id="tasksTab" class="hidden">
-                <p class="hint">Keep track of your coursework and upcoming deadlines.</p>
+                <p class="hint">Assignments from your courses, closest deadline first.</p>
                 <div id="taskList"></div>
             </div>
 
         </div>
 
-        <!-- Course details window -->
+        <!-- Course content: hidden by default, expands below card on click -->
         <div class="box courseContent hidden" id="coursePanel">
-            <button class="close" onclick="closeCourse()">✕</button>
+            <button class="close" id="closePanelButton">✕</button>
             <h2 class="panel-heading">
                 <i class="bi bi-journal-text"></i>Course Content &amp; Materials
             </h2>
@@ -99,7 +99,7 @@
     <!-- Lesson window: the text and file the lecturer posted -->
     <div class="modal-bg" id="lessonModal">
         <div class="modal-box wide">
-            <button class="close" onclick="closeModal('lessonModal')">✕</button>
+            <button class="close" id="closeLessonX">✕</button>
             <h2 id="lessonTitle"></h2>
             <p class="hint" id="lessonInfo"></p>
 
@@ -107,8 +107,8 @@
             <div id="lessonFile"></div>
 
             <div class="buttons">
-                <button class="light" onclick="closeModal('lessonModal')">Close</button>
-                <button id="lessonDone" onclick="markLessonDone()">Mark as done</button>
+                <button class="light" id="closeLessonButton">Close</button>
+                <button id="lessonDone">Mark as done</button>
             </div>
         </div>
     </div>
@@ -116,7 +116,7 @@
     <!-- Take course window -->
     <div class="modal-bg" id="takeModal">
         <div class="modal-box">
-            <button class="close" onclick="closeModal('takeModal')">✕</button>
+            <button class="close" id="closeTakeButton">✕</button>
             <h2>Take a Course</h2>
             <p class="hint">Courses from the Teach tab that you have not taken yet.</p>
             <div id="availableList"></div>
@@ -129,6 +129,7 @@
     <script src="../../scripts/learning/schedule.js"></script>
     <script src="../../scripts/learning/tasks.js"></script>
     <script src="../../scripts/learning/lesson.js"></script>
+    <script src="../../scripts/learning/course.js"></script>
     <script src="../../scripts/learning/dashboard.js"></script>
 </body>
 
