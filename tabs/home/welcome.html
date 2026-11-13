@@ -2,118 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- makes the page fit phone screens -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkillBridge - Learn Something. Teach Something.</title>
+  <!-- shared styles first (navbar, buttons, footer), then the styles of this page -->
+  <!-- ../../ goes up two folders (home -> tabs -> skill-bridge) -->
   <link rel="stylesheet" href="../../styles/style.css">
   <link rel="stylesheet" href="../../styles/home/welcome.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
+  <!-- NAVBAR: logo on the left, Log in and Sign up on the right -->
+  <div class="navbar">
+    <!-- clicking the logo brings you back to this page -->
     <a href="welcome.html"><img src="../../images/SkillBridge.png" alt="SkillBridge"></a>
     <div class="nav-buttons">
       <a href="login.html" class="btn">Log in</a>
       <a href="signup.html" class="btn btn-main">Sign up</a>
     </div>
-  </nav>
+  </div>
 
-  <!-- HERO -->
-  <header class="hero">
+  <!-- HERO: the big title at the top -->
+  <div class="hero">
     <p>For Epoka University students</p>
+    <!-- the word inside the span is changed every 2 seconds by welcome.js -->
     <h1>Learn <span id="word">Java</span></h1>
-    <p class="hero-sub">Learn something. Teach something.</p>
-    <div class="hero-buttons">
-      <a href="signup.html" class="btn btn-main">Get started</a>
-      <a href="login.html" class="btn">I have an account</a>
-    </div>
-  </header>
+    <p>Learn something. Teach something.</p>
+    <a href="signup.html" class="btn btn-main">Get started</a>
+  </div>
 
-  <main>
+  <!-- CONTENT: everything between the hero and the footer -->
+  <div class="content">
 
-    <!-- STATS -->
-    <section class="stats">
+    <!-- STATS: three boxes next to each other -->
+    <div class="stats">
       <div class="stat">
-        <p class="number" id="skills">0</p>
+        <h2>120</h2>
         <p>skills</p>
       </div>
       <div class="stat">
-        <p class="number" id="teachers">0</p>
+        <h2>45</h2>
         <p>student teachers</p>
       </div>
       <div class="stat">
-        <p class="number" id="majors">0</p>
+        <h2>12</h2>
         <p>majors</p>
       </div>
-    </section>
+    </div>
 
-    <!-- POPULAR SKILLS -->
-    <section class="box">
-      <h2>Popular skills</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>C++ for beginners</h3>
-          <p class="card-info">Computer Engineering · by Arben</p>
-          <span class="badge beginner">Beginner</span>
-        </div>
-        <div class="card">
-          <h3>AutoCAD floor plans</h3>
-          <p class="card-info">Architecture · by Ana</p>
-          <span class="badge intermediate">Intermediate</span>
-        </div>
-        <div class="card">
-          <h3>Concrete design</h3>
-          <p class="card-info">Civil Engineering · by Ermal</p>
-          <span class="badge advanced">Advanced</span>
-        </div>
-      </div>
-      <p class="center">
-        <a href="signup.html" class="btn btn-main">Sign up to see all skills</a>
-      </p>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="box">
+    <!-- HOW IT WORKS: three steps next to each other -->
+    <div class="box">
       <h2>How it works</h2>
       <div class="steps">
         <div class="step">
-          <p class="step-number">1</p>
-          <h3>Explore</h3>
+          <h3>1. Explore</h3>
           <p>Find a skill you want to learn</p>
         </div>
         <div class="step">
-          <p class="step-number">2</p>
-          <h3>Learn</h3>
+          <h3>2. Learn</h3>
           <p>Learn it from a classmate</p>
         </div>
         <div class="step">
-          <p class="step-number">3</p>
-          <h3>Teach</h3>
+          <h3>3. Teach</h3>
           <p>Share what you know</p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- LEARNER STORIES -->
-    <section class="box">
+    <!-- LEARNER STORIES: short quotes from students -->
+    <div class="box">
       <h2>Learner stories</h2>
-      <div class="story">
-        <div class="avatar" id="avatar">A</div>
-        <p id="storyText">Ana helped 8 first-years pass their AutoCAD project and now teaches every Thursday.</p>
-      </div>
-      <div class="story-buttons">
-        <button id="prev" class="btn">&lt;</button>
-        <button id="next" class="btn">&gt;</button>
-      </div>
-    </section>
+      <p>"Ana helped 8 first-years pass their AutoCAD project and now teaches every Thursday."</p>
+      <p>"Ermal was failing Statics. After two sessions with a classmate he passed, and now he teaches it."</p>
+      <p>"Klea taught HTML to a Business student and learned Excel in return."</p>
+    </div>
 
-  </main>
+  </div>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <div class="footer">
     <p>SkillBridge · Epoka University · Web Technologies 2026</p>
-  </footer>
+  </div>
 
+  <!-- the script is loaded last, so the page already exists when it runs -->
   <script src="../../scripts/home/welcome.js"></script>
 </body>
 </html>

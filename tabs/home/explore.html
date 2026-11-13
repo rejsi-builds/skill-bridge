@@ -2,35 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- makes the page fit phone screens -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Explore - SkillBridge</title>
+  <!-- shared styles first (navbar, buttons, footer), then the styles of this page -->
   <link rel="stylesheet" href="../../styles/style.css">
   <link rel="stylesheet" href="../../styles/home/explore.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
+  <!-- NAVBAR: logo on the left, the 4 tabs and Log out on the right -->
+  <div class="navbar">
+    <!-- clicking the logo brings you back to Explore -->
     <a href="explore.html"><img src="../../images/SkillBridge.png" alt="SkillBridge"></a>
     <ul class="nav-links">
+      <!-- class="active" makes the current page blue and bold -->
       <li><a href="explore.html" class="active">Explore</a></li>
+      <!-- ../ goes up from home/ to tabs/, where the other pages are -->
       <li><a href="../learning/dashboard.html">My Learning</a></li>
-      <li><a href="../teaching.html">Teach</a></li>
+      <li><a href="../teaching/teaching.html">Teach</a></li>
       <li><a href="../skill-exchange.html">Skill Exchange</a></li>
+      <!-- Log out takes you back to the welcome page -->
       <li><a href="welcome.html" class="btn">Log out</a></li>
     </ul>
-  </nav>
+  </div>
 
-  <main>
+  <!-- CONTENT: everything between the navbar and the footer -->
+  <div class="content">
 
     <h1>What do you want to learn today?</h1>
 
-    <!-- WEEKLY CHALLENGE COUNTDOWN -->
-    <div class="countdown">
-      <div>
-        <p>Next weekly challenge starts in</p>
-        <p class="time" id="countdown">--</p>
-      </div>
+    <!-- WEEKLY CHALLENGE: links to the Skill Exchange tab -->
+    <div class="challenge">
+      <p>Next weekly challenge: <b>Monday at 10:00</b></p>
       <a href="../skill-exchange.html" class="btn">See challenges</a>
     </div>
 
@@ -38,55 +42,46 @@
     <div class="box">
       <h2>Explore skills</h2>
 
-      <input type="text" id="search" placeholder="Search skills">
-
+      <!-- each button calls showSkills() in explore.js with its department name -->
       <div class="categories">
-        <button class="category active" onclick="pickMajor('All')">All</button>
-        <button class="category" onclick="pickMajor('Computer Eng')">Computer Eng</button>
-        <button class="category" onclick="pickMajor('Software')">Software</button>
-        <button class="category" onclick="pickMajor('Electronics')">Electronics</button>
-        <button class="category" onclick="pickMajor('Architecture')">Architecture</button>
-        <button class="category" onclick="pickMajor('Civil')">Civil</button>
-        <button class="category" onclick="pickMajor('Business')">Business</button>
-        <button class="category" onclick="pickMajor('Economics')">Economics</button>
-        <button class="category" onclick="pickMajor('Law')">Law</button>
+        <button onclick="showSkills('All')">All</button>
+        <button onclick="showSkills('Computer Eng')">Computer Eng</button>
+        <button onclick="showSkills('Software')">Software</button>
+        <button onclick="showSkills('Electronics')">Electronics</button>
+        <button onclick="showSkills('Architecture')">Architecture</button>
+        <button onclick="showSkills('Civil')">Civil</button>
+        <button onclick="showSkills('Business')">Business</button>
       </div>
 
-      <select id="level">
-        <option>All levels</option>
-        <option>Beginner</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-      </select>
+      <!-- empty: "... saved!" appears here when you click Save -->
+      <p class="message" id="message"></p>
 
-      <p class="small" id="resultCount"></p>
-      <p class="saved-message" id="savedMessage"></p>
-
-      <!-- the cards are created by explore.js -->
+      <!-- empty: the skill cards are created here by explore.js -->
       <div class="cards" id="cards"></div>
     </div>
 
-    <!-- SKILL OF THE DAY + LIVE ACTIVITY -->
+    <!-- SKILL OF THE DAY + LIVE ACTIVITY: two boxes next to each other -->
     <div class="row">
-      <div class="box skill-of-day">
-        <p class="small">Skill of the day</p>
-        <h3 id="sotdTitle"></h3>
-        <p class="small" id="sotdInfo"></p>
-      </div>
-
       <div class="box">
-        <h2><span class="live-dot"></span> Live activity</h2>
-        <ul class="feed" id="feed"></ul>
+        <h2>Skill of the day</h2>
+        <!-- filled by explore.js -->
+        <p id="skillOfDay"></p>
+      </div>
+      <div class="box">
+        <h2>Live activity</h2>
+        <!-- this text is changed every 4 seconds by explore.js -->
+        <p id="activity">Ermal just started Statics made simple</p>
       </div>
     </div>
 
-  </main>
+  </div>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <div class="footer">
     <p>SkillBridge · Epoka University · Web Technologies 2026</p>
-  </footer>
+  </div>
 
+  <!-- the script is loaded last, so the page already exists when it runs -->
   <script src="../../scripts/home/explore.js"></script>
 </body>
 </html>

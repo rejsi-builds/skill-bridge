@@ -16,12 +16,14 @@
     <h1>Welcome back</h1>
     <p>Log in with your Epoka account</p>
 
-    <form action="explore.html">
+    <form id="loginForm" action="explore.html">
       <label>Email</label>
-      <input type="email" required>
+      <input type="email" id="email" required>
 
       <label>Password</label>
-      <input type="password" required>
+      <input type="password" id="password" required>
+
+      <p id="error"></p>
 
       <button type="submit">Log in</button>
     </form>
@@ -30,5 +32,6 @@
 
   </div>
 
+  <script src="../../scripts/home/login.js"></script>
 </body>
 </html>

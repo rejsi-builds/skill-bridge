@@ -19,13 +19,13 @@
     <form id="signupForm" action="explore.html">
 
       <label>Full name</label>
-      <input type="text" required>
+      <input type="text" id="fullName" required>
 
       <label>Email</label>
       <input type="email" id="email" placeholder="name@epoka.edu.al" required>
 
       <label>Major</label>
-      <select required>
+      <select id="major" required>
         <option value="">Choose your major</option>
         <option>Architecture</option>
         <option>Civil Engineering</option>
@@ -42,17 +42,17 @@
       </select>
 
       <label>Interests</label>
-      <label><input type="checkbox"> Programming</label>
-      <label><input type="checkbox"> Design</label>
-      <label><input type="checkbox"> Languages</label>
-      <label><input type="checkbox"> Photography</label>
-      <label><input type="checkbox"> Music</label>
+      <label><input type="checkbox" class="interest" value="Programming"> Programming</label>
+      <label><input type="checkbox" class="interest" value="Design"> Design</label>
+      <label><input type="checkbox" class="interest" value="Languages"> Languages</label>
+      <label><input type="checkbox" class="interest" value="Photography"> Photography</label>
+      <label><input type="checkbox" class="interest" value="Music"> Music</label>
 
       <label>Skills related to your major</label>
-      <input type="text" placeholder="e.g. Java, AutoCAD">
+      <input type="text" id="skills" placeholder="e.g. Java, AutoCAD">
 
       <label>Password</label>
-      <input type="password" required>
+      <input type="password" id="password" required>
 
       <p id="error"></p>
 

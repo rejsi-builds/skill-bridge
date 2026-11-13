@@ -1,22 +1,16 @@
-/* ===== PAGE WIDTH ===== */
-main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 /* ===== NAVBAR BUTTONS ===== */
+/* puts Log in and Sign up next to each other with a small space */
 .nav-buttons {
   display: flex;
   gap: 10px;
 }
 
 /* ===== HERO ===== */
+/* light blue band at the top, everything centered */
 .hero {
   text-align: center;
   padding: 60px 20px;
   background-color: #E6F1FB;
-  margin-bottom: 30px;
 }
 
 .hero h1 {
@@ -24,54 +18,54 @@ main {
   margin: 10px 0;
 }
 
-.hero h1 span {
+/* the changing word is blue */
+.hero span {
   color: #185FA5;
 }
 
 .hero p {
   color: #5f6b7a;
-  margin: 0;
+  font-size: 18px;
 }
 
-.hero .hero-sub {
-  font-size: 20px;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
+/* ===== PAGE CONTENT ===== */
+/* max 1000px wide; margin auto centers it on big screens */
+.content {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
 /* ===== STATS ===== */
+/* the three boxes in one row */
 .stats {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
 }
 
+/* flex: 1 makes the three boxes the same width */
 .stat {
   flex: 1;
   background-color: white;
   border: 1px solid #dbe6f2;
   border-radius: 12px;
-  padding: 20px;
   text-align: center;
 }
 
+/* the big number */
+.stat h2 {
+  font-size: 36px;
+  color: #185FA5;
+  margin-bottom: 0;
+}
+
 .stat p {
-  margin: 0;
   color: #5f6b7a;
 }
 
-.stat .number {
-  font-size: 36px;
-  font-weight: bold;
-  color: #185FA5;
-}
-
 /* ===== WHITE BOXES ===== */
+/* used for "How it works" and "Learner stories" */
 .box {
   background-color: white;
   border: 1px solid #dbe6f2;
@@ -80,125 +74,40 @@ main {
   margin-bottom: 20px;
 }
 
+/* removes the empty space above the box title */
 .box h2 {
   margin-top: 0;
 }
 
-.center {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-/* ===== SKILL CARDS ===== */
-.cards {
-  display: flex;
-  gap: 15px;
-}
-
-.card {
-  flex: 1;
-  background-color: #f4f8fc;
-  border: 1px solid #dbe6f2;
-  border-radius: 12px;
-  padding: 15px;
-}
-
-.card:hover {
-  border-color: #85B7EB;
-}
-
-.card h3 {
-  margin: 0 0 5px;
-}
-
-.card-info {
-  font-size: 13px;
+.box p {
   color: #5f6b7a;
 }
 
-.badge {
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 8px;
-}
-
-.beginner {
-  background-color: #EAF3DE;
-  color: #27500A;
-}
-
-.intermediate {
-  background-color: #FAEEDA;
-  color: #633806;
-}
-
-.advanced {
-  background-color: #FCEBEB;
-  color: #791F1F;
-}
-
 /* ===== HOW IT WORKS ===== */
+/* the three steps in one row */
 .steps {
   display: flex;
   gap: 20px;
-  text-align: center;
 }
 
 .step {
   flex: 1;
-}
-
-.step p {
-  color: #5f6b7a;
-}
-
-.step .step-number {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  margin: 0 auto;
-  border-radius: 50%;
-  background-color: #185FA5;
-  color: white;
-  font-weight: bold;
-}
-
-/* ===== LEARNER STORIES ===== */
-.story {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  min-height: 70px;
-}
-
-.avatar {
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
   text-align: center;
-  border-radius: 50%;
-  background-color: #E6F1FB;
-  color: #185FA5;
-  font-size: 22px;
-  font-weight: bold;
-  flex-shrink: 0;
 }
 
-.story-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+.step h3 {
+  color: #185FA5;
 }
 
 /* ===== PHONES ===== */
+/* when the screen is 700px or smaller */
 @media (max-width: 700px) {
   .hero h1 {
     font-size: 34px;
   }
 
-  .hero-buttons,
+  /* the rows become columns: boxes go under each other */
   .stats,
-  .cards,
   .steps {
     flex-direction: column;
   }
