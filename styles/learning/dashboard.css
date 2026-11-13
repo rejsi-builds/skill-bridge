@@ -1,0 +1,283 @@
+.dashboard-page {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #E6F1FB;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+h1 {
+  margin: 16px 0 0;
+}
+
+h2, h3, h4 {
+  margin: 0;
+}
+
+.subtitle,
+.hint {
+  color: #5a6b7d;
+  margin: 6px 0 16px;
+}
+
+.back {
+  color: #185FA5;
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.empty {
+  text-align: center;
+  color: #5a6b7d;
+  padding: 30px 0;
+}
+
+
+button {
+  font-size: 15px;
+  padding: 10px 16px;
+  background-color: #185FA5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0C447C;
+}
+
+button.light {
+  background-color: white;
+  color: #185FA5;
+  border: 1px solid #B5D4F4;
+}
+
+button.light:hover {
+  background-color: #E6F1FB;
+}
+
+/* a button that looks like a link */
+button.link {
+  background: none;
+  color: #185FA5;
+  padding: 0;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+/* dropdown menus */
+select {
+  padding: 10px;
+  border: 1px solid #B5D4F4;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+}
+
+
+/* progress bar */
+
+.bar {
+  height: 8px;
+  background-color: #E6F1FB;
+  border-radius: 4px;
+  margin: 10px 0 6px;
+}
+
+.bar.big {
+  height: 14px;
+  border-radius: 7px;
+}
+
+.bar div {
+  height: 100%;
+  width: 0;
+  background-color: #185FA5;
+  border-radius: inherit;
+}
+
+.bar div.complete {
+  background-color: #3B9B5E;
+}
+
+
+/* badge styles for labels such as status and category */
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.blue {
+  background-color: #D9E9F8;
+  color: #185FA5;
+}
+
+.badge.green {
+  background-color: #DFF2E6;
+  color: #1E6B3C;
+}
+
+
+/* tabs */
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  border-bottom: 2px solid #E6F1FB;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: none;
+  color: #5a6b7d;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: -2px;
+  border-bottom: 2px solid transparent;
+}
+
+.tab:hover {
+  background-color: #E6F1FB;
+}
+
+.tab.active {
+  color: #185FA5;
+  font-weight: bold;
+  border-bottom: 2px solid #185FA5;
+}
+
+
+/* course cards */
+
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.course-card {
+  border: 1px solid #B5D4F4;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.course-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.course-card h3 {
+  margin: 10px 0 4px;
+}
+
+.course-image {
+  height: 90px;
+  background-color: #E6F1FB;
+  border-radius: 8px;
+  font-size: 40px;
+  color: #185FA5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.course-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.lecturer {
+  color: #5a6b7d;
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+/* Course Content: shown below the course cards when clicked */
+.courseContent {
+  position: relative;
+  border: 1px solid #B5D4F4;
+}
+
+.courseContent h4 {
+  margin: 20px 0 10px;
+  color: #185FA5;
+}
+
+.panel-heading i {
+  color: #185FA5;
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.course-info {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#detailTitle {
+  color: #185FA5;
+  margin: 0 0 4px;
+}
+
+.chapter {
+  font-weight: bold;
+  margin: 14px 0 8px;
+}
+
+/* lesson titles in the course window are links that open the lesson */
+.lesson button.link {
+  font-size: 16px;
+  text-align: left;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.lesson button.link:hover {
+  text-decoration: underline;
+}
+
+.lesson button.link.done {
+  text-decoration: line-through;
+  color: #999999;
+}
