@@ -11,7 +11,7 @@ function renderProfile() {
     let interests = "";
 
     for (const interest of currentUser.interests) {
-        interests += <span class="badge">${interest}</span>;
+        interests += `<span class="badge">${interest}</span>`;
     }
 
     document.getElementById("profileCard").innerHTML = `
