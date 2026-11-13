@@ -1,31 +1,42 @@
+/* ===== PAGE ===== */
+/* light blue background that fills at least the whole screen height */
 .user-page {
     margin: 0;
     min-height: 100vh;
     background-color: #E6F1FB;
 }
 
+/* max 900px wide; margin auto centers it on big screens */
 .container {
     max-width: 900px;
     margin: auto;
     padding: 40px 20px;
 }
 
+/* removes the default space around the page title */
 h1 {
     margin: 0;
 }
 
+/* gray line under the title */
 .subtitle {
     color: #5a6b7d;
     margin: 6px 0 24px;
 }
 
-/* Card on the left, buttons on the right */
+/* ===== LAYOUT ===== */
+/* profile card on the left, buttons on the right */
+/* flex-wrap: if there is no space, the buttons move under the card */
 .layout {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
 
+/* ===== PROFILE CARD ===== */
+/* white card: avatar on the left, info on the right */
+/* flex: 1 makes it take all the space the buttons don't use */
+/* min-width: it never gets narrower than 280px */
 .card {
     background-color: white;
     border-radius: 12px;
@@ -37,6 +48,9 @@ h1 {
     flex-wrap: wrap;
 }
 
+/* round circle with the user's initials */
+/* border-radius: 50% turns the square into a circle */
+/* flex + center puts the letters in the middle of the circle */
 .avatar {
     width: 80px;
     height: 80px;
@@ -50,21 +64,26 @@ h1 {
     align-items: center;
 }
 
+/* the user's name */
 .profile-info h2 {
     margin: 0 0 16px;
 }
 
+/* small gray title above each value (e.g. "Email", "Major") */
 .label {
     font-size: 13px;
     color: #5a6b7d;
     margin: 12px 0 2px;
 }
 
+/* the value itself (e.g. the email address) */
 .value {
     font-weight: bold;
     margin: 0;
 }
 
+/* small rounded tags for the interests */
+/* inline-block lets them sit next to each other and still take padding */
 .badge {
     display: inline-block;
     background-color: #E6F1FB;
@@ -75,7 +94,8 @@ h1 {
     font-size: 13px;
 }
 
-/* Learn and Teach: stacked vertically */
+/* ===== BUTTONS ON THE RIGHT ===== */
+/* Learn, Teach and Exchange stacked under each other */
 .actions {
     display: flex;
     flex-direction: column;
@@ -83,6 +103,9 @@ h1 {
     width: 260px;
 }
 
+/* one big button (a link) */
+/* flex: 1 gives all buttons the same height */
+/* the title and the small text inside are stacked and centered vertically */
 .action {
     flex: 1;
     display: flex;
@@ -94,30 +117,29 @@ h1 {
     text-decoration: none;
 }
 
+/* the big title inside each button */
 .action strong {
     font-size: 20px;
 }
 
-.learn {
-    background-color: #185FA5;
-    color: white;
-}
-
-.learn:hover {
-    background-color: #0C447C;
-}
-
-.teach {
+/* the three buttons look the same: white with a blue border */
+.learn,
+.teach,
+.exchange {
     background-color: white;
     color: #185FA5;
     border: 2px solid #185FA5;
 }
 
-.teach:hover {
+/* light blue when the mouse is on a button */
+.learn:hover,
+.teach:hover,
+.exchange:hover {
     background-color: #B5D4F4;
 }
 
-/* On small screens the buttons go side by side under the card */
+/* ===== PHONES ===== */
+/* on small screens the buttons go side by side under the card */
 @media (max-width: 700px) {
     .actions {
         flex-direction: row;
