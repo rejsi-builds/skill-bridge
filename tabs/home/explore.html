@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore - SkillBridge</title>
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/home/explore.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="explore.html"><img src="../../images/SkillBridge.png" alt="SkillBridge"></a>
+    <ul class="nav-links">
+      <li><a href="explore.html" class="active">Explore</a></li>
+      <li><a href="../learning/dashboard.html">My Learning</a></li>
+      <li><a href="../teaching.html">Teach</a></li>
+      <li><a href="../skill-exchange.html">Skill Exchange</a></li>
+      <li><a href="welcome.html" class="btn">Log out</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <h1>What do you want to learn today?</h1>
+
+    <!-- WEEKLY CHALLENGE COUNTDOWN -->
+    <div class="countdown">
+      <div>
+        <p>Next weekly challenge starts in</p>
+        <p class="time" id="countdown">--</p>
+      </div>
+      <a href="../skill-exchange.html" class="btn">See challenges</a>
+    </div>
+
+    <!-- EXPLORE SKILLS -->
+    <div class="box">
+      <h2>Explore skills</h2>
+
+      <input type="text" id="search" placeholder="Search skills">
+
+      <div class="categories">
+        <button class="category active" onclick="pickMajor('All')">All</button>
+        <button class="category" onclick="pickMajor('Computer Eng')">Computer Eng</button>
+        <button class="category" onclick="pickMajor('Software')">Software</button>
+        <button class="category" onclick="pickMajor('Electronics')">Electronics</button>
+        <button class="category" onclick="pickMajor('Architecture')">Architecture</button>
+        <button class="category" onclick="pickMajor('Civil')">Civil</button>
+        <button class="category" onclick="pickMajor('Business')">Business</button>
+        <button class="category" onclick="pickMajor('Economics')">Economics</button>
+        <button class="category" onclick="pickMajor('Law')">Law</button>
+      </div>
+
+      <select id="level">
+        <option>All levels</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+
+      <p class="small" id="resultCount"></p>
+      <p class="saved-message" id="savedMessage"></p>
+
+      <!-- the cards are created by explore.js -->
+      <div class="cards" id="cards"></div>
+    </div>
+
+    <!-- SKILL OF THE DAY + LIVE ACTIVITY -->
+    <div class="row">
+      <div class="box skill-of-day">
+        <p class="small">Skill of the day</p>
+        <h3 id="sotdTitle"></h3>
+        <p class="small" id="sotdInfo"></p>
+      </div>
+
+      <div class="box">
+        <h2><span class="live-dot"></span> Live activity</h2>
+        <ul class="feed" id="feed"></ul>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>SkillBridge · Epoka University · Web Technologies 2026</p>
+  </footer>
+
+  <script src="../../scripts/home/explore.js"></script>
+</body>
+</html>

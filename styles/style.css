@@ -1,3 +1,102 @@
-   body {
-     font-family: Arial, Helvetica, sans-serif;
-   }
+/* SHARED STYLES FOR ALL SKILLBRIDGE PAGES */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1e2a38;
+  background-color: #f4f8fc;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: white;
+  border-bottom: 1px solid #dbe6f2;
+}
+
+.navbar img {
+  height: 40px;
+}
+
+/* navbar links (used on the logged-in pages) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #5f6b7a;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #185FA5;
+  font-weight: bold;
+}
+
+.nav-links a.btn {
+  color: #185FA5;
+  font-weight: normal;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #185FA5;
+  border-radius: 8px;
+  background-color: white;
+  color: #185FA5;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #E6F1FB;
+}
+
+.btn-main {
+  background-color: #185FA5;
+  color: white;
+}
+
+.btn-main:hover {
+  background-color: #0C447C;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+  background-color: #0C447C;
+  color: white;
+}
+
+/* PHONES */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillBridge - Learn Something. Teach Something.</title>
+  <link rel="stylesheet" href="../../styles/style.css">
+  <link rel="stylesheet" href="../../styles/home/welcome.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="welcome.html"><img src="../../images/SkillBridge.png" alt="SkillBridge"></a>
+    <div class="nav-buttons">
+      <a href="login.html" class="btn">Log in</a>
+      <a href="signup.html" class="btn btn-main">Sign up</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <p>For Epoka University students</p>
+    <h1>Learn <span id="word">Java</span></h1>
+    <p class="hero-sub">Learn something. Teach something.</p>
+    <div class="hero-buttons">
+      <a href="signup.html" class="btn btn-main">Get started</a>
+      <a href="login.html" class="btn">I have an account</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stat">
+        <p class="number" id="skills">0</p>
+        <p>skills</p>
+      </div>
+      <div class="stat">
+        <p class="number" id="teachers">0</p>
+        <p>student teachers</p>
+      </div>
+      <div class="stat">
+        <p class="number" id="majors">0</p>
+        <p>majors</p>
+      </div>
+    </section>
+
+    <!-- POPULAR SKILLS -->
+    <section class="box">
+      <h2>Popular skills</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>C++ for beginners</h3>
+          <p class="card-info">Computer Engineering · by Arben</p>
+          <span class="badge beginner">Beginner</span>
+        </div>
+        <div class="card">
+          <h3>AutoCAD floor plans</h3>
+          <p class="card-info">Architecture · by Ana</p>
+          <span class="badge intermediate">Intermediate</span>
+        </div>
+        <div class="card">
+          <h3>Concrete design</h3>
+          <p class="card-info">Civil Engineering · by Ermal</p>
+          <span class="badge advanced">Advanced</span>
+        </div>
+      </div>
+      <p class="center">
+        <a href="signup.html" class="btn btn-main">Sign up to see all skills</a>
+      </p>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="box">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <p class="step-number">1</p>
+          <h3>Explore</h3>
+          <p>Find a skill you want to learn</p>
+        </div>
+        <div class="step">
+          <p class="step-number">2</p>
+          <h3>Learn</h3>
+          <p>Learn it from a classmate</p>
+        </div>
+        <div class="step">
+          <p class="step-number">3</p>
+          <h3>Teach</h3>
+          <p>Share what you know</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNER STORIES -->
+    <section class="box">
+      <h2>Learner stories</h2>
+      <div class="story">
+        <div class="avatar" id="avatar">A</div>
+        <p id="storyText">Ana helped 8 first-years pass their AutoCAD project and now teaches every Thursday.</p>
+      </div>
+      <div class="story-buttons">
+        <button id="prev" class="btn">&lt;</button>
+        <button id="next" class="btn">&gt;</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>SkillBridge · Epoka University · Web Technologies 2026</p>
+  </footer>
+
+  <script src="../../scripts/home/welcome.js"></script>
+</body>
+</html>

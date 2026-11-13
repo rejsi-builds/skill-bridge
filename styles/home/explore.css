@@ -1,0 +1,232 @@
+/*  PAGE WIDTH */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 30px 0 20px;
+}
+
+.small {
+  font-size: 14px;
+  color: #5f6b7a;
+}
+
+/* COUNTDOWN */
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #B5D4F4;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+}
+
+.countdown p {
+  margin: 0;
+  color: #0C447C;
+}
+
+.countdown .time {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/*  WHITE BOXES  */
+.box {
+  background-color: white;
+  border: 1px solid #dbe6f2;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.box h2 {
+  margin-top: 0;
+}
+
+/*  SEARCH AND FILTERS  */
+#search {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #B5D4F4;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.category {
+  padding: 8px 15px;
+  border: 1px solid #B5D4F4;
+  border-radius: 20px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.category:hover {
+  background-color: #E6F1FB;
+}
+
+.category.active {
+  background-color: #185FA5;
+  color: white;
+}
+
+#level {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #B5D4F4;
+  border-radius: 8px;
+}
+
+.saved-message {
+  color: #3B6D11;
+  font-weight: bold;
+  min-height: 20px;
+}
+
+/*  SKILL CARDS  */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  width: 31%;
+  background-color: #f4f8fc;
+  border: 1px solid #dbe6f2;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.card:hover {
+  border-color: #85B7EB;
+}
+
+.card h3 {
+  margin: 0 0 5px;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+.card .info {
+  font-size: 13px;
+  color: #5f6b7a;
+  margin: 0;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.beginner {
+  background-color: #EAF3DE;
+  color: #27500A;
+}
+
+.intermediate {
+  background-color: #FAEEDA;
+  color: #633806;
+}
+
+.advanced {
+  background-color: #FCEBEB;
+  color: #791F1F;
+}
+
+.heart {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #5f6b7a;
+}
+
+.heart.saved {
+  color: #E24B4A;
+}
+
+/*  SKILL OF THE DAY + LIVE ACTIVITY  */
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.row .box {
+  flex: 1;
+}
+
+.skill-of-day {
+  border: 2px solid #185FA5;
+}
+
+.skill-of-day h3 {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+.live-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #639922;
+}
+
+.feed {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feed li {
+  padding: 8px 0;
+  border-bottom: 1px solid #dbe6f2;
+  color: #5f6b7a;
+}
+
+.feed li:first-child {
+  color: #1e2a38;
+  font-weight: bold;
+}
+
+/*  PHONES  */
+@media (max-width: 700px) {
+  .countdown,
+  .row {
+    flex-direction: column;
+  }
+
+  .countdown {
+    gap: 15px;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
