@@ -3,136 +3,648 @@
   color: #1e2a38;
   min-height: 100vh;
 }
-.skill-page button, .skill-page select { font: inherit; }
-.skill-page button { cursor: pointer; }
-.skill-page [hidden] { display: none !important; }
-.skill-page .page-container { max-width: 1170px; margin: auto; padding: 16px 24px 65px; }
-.skill-page .page-links { display: flex; justify-content: space-between; gap: 14px; align-items: center; margin-bottom: 18px; }
-.skill-page .page-links a { text-decoration: none; font-size: 16px; color: #185FA5; }
-.skill-page .page-links a:hover { text-decoration: underline; }
-.skill-page .page-label { color: #597188; font-size: 14px; }
-.skill-page .page-heading { margin: 0 0 20px; }
-.skill-page .page-heading h1 { font-size: 36px; letter-spacing: -0.7px; margin: 0 0 7px; line-height: 1.15; }
-.skill-page .page-heading p { margin: 0; color: #526273; font-size: 17px; }
-.skill-page .white-panel { background: #fff; border-radius: 14px; padding: 27px 28px 30px; }
 
-/* Tab buttons sit INSIDE the white-panel, with the same underline treatment as My Courses / Schedule / Tasks. */
-.skill-page .section-tabs { display: flex; gap: 8px; border-bottom: 2px solid #e4edf4; margin-bottom: 24px; }
-.skill-page .section-tab { border: 0; border-bottom: 3px solid transparent; padding: 10px 20px 13px; margin-bottom: -2px; background: transparent;
-                           color: #556878; font-size: 16px; }
-.skill-page .section-tab.active { border-bottom-color: #185FA5; color: #185FA5; font-weight: bold; }
-.skill-page .section-tab:hover { color: #185FA5; }
-.skill-page .section-tab:focus-visible, .skill-page button:focus-visible, .skill-page select:focus-visible, .skill-page a:focus-visible { 
-                          outline: 3px solid #88bbe9; outline-offset: 2px; }
+.skill-page button,
+.skill-page select {
+  font: inherit;
+}
 
-                        
-.skill-page .panel-intro { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 24px; }
-.skill-page .panel-intro h2 { font-size: 21px; margin: 0 0 7px; }
-.skill-page .panel-intro p { color: #586978; margin: 0; font-size: 15px; }
+.skill-page button {
+  cursor: pointer;
+}
+
+.skill-page [hidden] {
+  display: none !important;
+}
+
+.skill-page .page-container {
+  max-width: 1170px;
+  margin: auto;
+  padding: 16px 24px 65px;
+}
+
+.skill-page .page-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.skill-page .page-links a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #185FA5;
+}
+
+.skill-page .page-links a:hover {
+  text-decoration: underline;
+}
+
+.skill-page .page-label {
+  color: #597188;
+  font-size: 14px;
+}
+
+.skill-page .page-heading {
+  margin: 0 0 20px;
+}
+
+.skill-page .page-heading h1 {
+  font-size: 36px;
+  letter-spacing: -0.7px;
+  margin: 0 0 7px;
+  line-height: 1.15;
+}
+
+.skill-page .page-heading p {
+  margin: 0;
+  color: #526273;
+  font-size: 17px;
+}
+
+.skill-page .white-panel {
+  background: #fff;
+  border-radius: 14px;
+  padding: 27px 28px 30px;
+}
+
+.section-tabs a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.skill-page .section-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid #e4edf4;
+  margin-bottom: 24px;
+}
+
+.skill-page .section-tab {
+  border: 0;
+  border-bottom: 3px solid transparent;
+  padding: 10px 20px 13px;
+  margin-bottom: -2px;
+  background: transparent;
+  color: #556878;
+  font-size: 16px;
+}
+
+.skill-page .section-tab.active {
+  border-bottom-color: #185FA5;
+  color: #185FA5;
+  font-weight: bold;
+}
+
+.skill-page .section-tab:hover {
+  color: #185FA5;
+}
+
+.skill-page .section-tab:focus-visible,
+.skill-page button:focus-visible,
+.skill-page select:focus-visible,
+.skill-page a:focus-visible {
+  outline: 3px solid #88bbe9;
+  outline-offset: 2px;
+}
 
 
-.skill-page select { background: #fff; border: 1px solid #b9d0e3; color: #263646; border-radius: 8px; padding: 11px 13px; min-width: 142px; }
-.skill-page .quiz-grid, .skill-page .student-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.skill-page .quiz-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.skill-page .quiz-card, .skill-page .student-card { min-width: 0; border: 1px solid #bad1e3; border-radius: 12px; background: white; padding: 18px; display: flex; flex-direction: column; }
-.skill-page .quiz-image { height: 143px; background: #e8f2fb; border-radius: 10px; display: grid; place-items: center; margin-bottom: 14px; }
+.skill-page .panel-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
 
-.skill-page .code-icon, .skill-page .world-icon { color: #185FA5; font-size: 53px; font-weight: 400; letter-spacing: -6px; }
-.skill-page .world-icon { letter-spacing: normal; font-size: 78px; line-height: 1; }
-.skill-page .card-labels { display: flex; align-items: center; justify-content: space-between; gap: 9px; font-size: 13px; color: #364b5c; }
+.skill-page .panel-intro h2 {
+  font-size: 21px;
+  margin: 0 0 7px;
+}
 
-.skill-page .status-tag { display: inline-block; padding: 4px 10px; border-radius: 15px; font-weight: bold; font-size: 12px; }
-.skill-page .blue-tag { color: #185FA5; background: #e5f0fc; }
-.skill-page .green-tag { color: #247b48; background: #e4f3e9; }
+.skill-page .panel-intro p {
+  color: #586978;
+  margin: 0;
+  font-size: 15px;
+}
 
-.skill-page .quiz-card h3 { font-size: 19px; margin: 13px 0 7px; }
-.skill-page .quiz-card > p { margin: 0 0 12px; color: #576573; line-height: 1.45; font-size: 14px; }
-.skill-page .quiz-details { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 9px; margin-top: auto; padding-top: 8px; font-size: 13px; color: #4f6274; }
-.skill-page .quiz-details.ratings { margin-top: 9px; border-top: 1px solid #e5edf4; padding-top: 12px; }
-.skill-page .ratings span:first-child { color: #b07513; }
-.skill-page .quiz-card .take-quiz { align-self: flex-start; margin-top: 17px; }
 
-.skill-page .btn-main { background-color: #185FA5; color: white; }
-.skill-page .btn-main:hover { background-color: #0C447C; color: white; }
+.skill-page select {
+  background: #fff;
+  border: 1px solid #b9d0e3;
+  color: #263646;
+  border-radius: 8px;
+  padding: 11px 13px;
+  min-width: 142px;
+}
 
-.skill-page .demo-note { margin: 18px 0 0; font-size: 12px; color: #768797; }
-.skill-page .exchange-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #f6faff; border: 1px solid #e2ebf2; padding: 18px; border-radius: 9px; }
-.skill-page .exchange-filters label { font-weight: bold; font-size: 14px; }
-.skill-page .exchange-filters select { display: block; width: 100%; margin-top: 8px; }
+.skill-page .quiz-grid,
+.skill-page .student-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
 
-.skill-page .group-heading { margin: 27px 0 14px; }
-.skill-page .group-heading h3 { margin: 0 0 5px; font-size: 19px; }
-.skill-page .group-heading p { margin: 0; color: #667684; font-size: 14px; }
-.skill-page .group-divider { margin-top: 30px; padding-top: 21px; border-top: 1px solid #e0e8ee; }
+.skill-page .quiz-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
-.skill-page .student-card { padding: 17px; }
-.skill-page .student-top { display: flex; gap: 12px; align-items: center; margin-bottom: 9px; }
-.skill-page .avatar { flex: 0 0 auto; display: grid; place-items: center; width: 49px; height: 49px; border-radius: 50%; background: #bcdaf5; color: #185FA5; font-weight: bold; }
-.skill-page .student-card h4 { margin: 0 0 4px; font-size: 16px; }
-.skill-page .student-card .student-subtitle { margin: 0; font-size: 12px; color: #687785; line-height: 1.5; }
-.skill-page .skill-label { margin: 12px 0 6px; font-size: 12px; font-weight: bold; color: #3f5061; }
-.skill-page .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
-.skill-page .tag-list span { font-size: 12px; color: #185FA5; background: #edf5fd; padding: 5px 8px; border-radius: 6px; }
-.skill-page .tag-list.wants span { color: #247b48; background: #e8f4eb; }
-.skill-page .student-email { color: #185FA5; text-decoration: none; font-size: 13px; overflow-wrap: anywhere; margin: 15px 0; }
-.skill-page .student-email:hover { text-decoration: underline; }
-.skill-page .student-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-page .student-actions button { flex: 1; min-width: 78px; padding: 9px 10px; font-size: 13px; }
-.skill-page .student-actions .view-profile { flex-basis: 100%; }
-.skill-page .student-actions .is-active { color: #247b48; background: #e8f5eb; border-color: #a5d2b3; }
-.skill-page .empty-text { font-size: 14px; color: #617286; margin: 4px 0 10px; }
+.skill-page .quiz-card,
+.skill-page .student-card {
+  min-width: 0;
+  border: 1px solid #bad1e3;
+  border-radius: 12px;
+  background: white;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-page .quiz-image {
+  height: 143px;
+  background: #e8f2fb;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+}
+
+.skill-page .code-icon,
+.skill-page .world-icon {
+  color: #185FA5;
+  font-size: 53px;
+  font-weight: 400;
+  letter-spacing: -6px;
+}
+
+.skill-page .world-icon {
+  letter-spacing: normal;
+  font-size: 78px;
+  line-height: 1;
+}
+
+.skill-page .card-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  font-size: 13px;
+  color: #364b5c;
+}
+
+.skill-page .status-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.skill-page .blue-tag {
+  color: #185FA5;
+  background: #e5f0fc;
+}
+
+.skill-page .green-tag {
+  color: #247b48;
+  background: #e4f3e9;
+}
+
+.skill-page .quiz-card h3 {
+  font-size: 19px;
+  margin: 13px 0 7px;
+}
+
+.skill-page .quiz-card>p {
+  margin: 0 0 12px;
+  color: #576573;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.skill-page .quiz-details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 8px;
+  font-size: 13px;
+  color: #4f6274;
+}
+
+.skill-page .quiz-details.participants-count {
+  margin-top: 9px;
+  border-top: 1px solid #e5edf4;
+  padding-top: 12px;
+}
+
+.skill-page .quiz-card .take-quiz {
+  align-self: flex-start;
+  margin-top: 17px;
+}
+
+.skill-page .btn-main {
+  background-color: #185FA5;
+  color: white;
+}
+
+.skill-page .btn-main:hover {
+  background-color: #0C447C;
+  color: white;
+}
+
+.skill-page .demo-note {
+  margin: 18px 0 0;
+  font-size: 12px;
+  color: #768797;
+}
+
+.skill-page .exchange-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: #f6faff;
+  border: 1px solid #e2ebf2;
+  padding: 18px;
+  border-radius: 9px;
+}
+
+.skill-page .exchange-filters label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.skill-page .exchange-filters select {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.skill-page .group-heading {
+  margin: 27px 0 14px;
+}
+
+.skill-page .group-heading h3 {
+  margin: 0 0 5px;
+  font-size: 19px;
+}
+
+.skill-page .group-heading p {
+  margin: 0;
+  color: #667684;
+  font-size: 14px;
+}
+
+.skill-page .group-divider {
+  margin-top: 30px;
+  padding-top: 21px;
+  border-top: 1px solid #e0e8ee;
+}
+
+.skill-page .student-card {
+  padding: 17px;
+}
+
+.skill-page .student-top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.skill-page .avatar {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  background: #bcdaf5;
+  color: #185FA5;
+  font-weight: bold;
+}
+
+.skill-page .student-card h4 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.skill-page .student-card .student-subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: #687785;
+  line-height: 1.5;
+}
+
+.skill-page .skill-label {
+  margin: 12px 0 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #3f5061;
+}
+
+.skill-page .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-page .tag-list span {
+  font-size: 12px;
+  color: #185FA5;
+  background: #edf5fd;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+.skill-page .tag-list.wants span {
+  color: #247b48;
+  background: #e8f4eb;
+}
+
+.skill-page .student-email {
+  color: #185FA5;
+  text-decoration: none;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  margin: 15px 0;
+}
+
+.skill-page .student-email:hover {
+  text-decoration: underline;
+}
+
+.skill-page .student-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-page .student-actions button {
+  flex: 1;
+  min-width: 78px;
+  padding: 9px 10px;
+  font-size: 13px;
+}
+
+.skill-page .student-actions .view-profile {
+  flex-basis: 100%;
+}
+
+.skill-page .student-actions .is-active {
+  color: #247b48;
+  background: #e8f5eb;
+  border-color: #a5d2b3;
+}
+
+.skill-page .empty-text {
+  font-size: 14px;
+  color: #617286;
+  margin: 4px 0 10px;
+}
 
 /* Popups for the quizzes and student profiles */
-.skill-page .modal-overlay { position: fixed; inset: 0; z-index: 20; background: rgba(19, 39, 60, .55); padding: 16px; display: flex; justify-content: center; align-items: center; }
-.skill-page .popup { width: min(100%, 610px); max-height: 90vh; overflow-y: auto; background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 18px 40px rgba(0,0,0,.17); }
-.skill-page .popup-heading { display: flex; justify-content: space-between; gap: 15px; align-items: flex-start; padding-bottom: 14px; border-bottom: 1px solid #dfe8f1; }
-.skill-page .popup-heading h2 { margin: 8px 0 0; font-size: 22px; }
-.skill-page .close-popup { border: none; border-radius: 6px; font-size: 27px; width: 34px; height: 34px; background: #edf4fa; color: #294960; }
+.skill-page .modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(19, 39, 60, .55);
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.skill-page .question-progress { display: flex; justify-content: space-between; color: #617182; font-size: 13px; gap: 10px; margin: 20px 0 9px; }
-.skill-page .progress-track { height: 9px; border-radius: 12px; background: #e4eff9; overflow: hidden; }
-.skill-page .progress-fill { height: 100%; background: #185FA5; border-radius: 12px; }
-.skill-page .question-heading { font-size: 18px; margin: 22px 0 14px; }
+.skill-page .popup {
+  width: min(100%, 610px);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .17);
+}
 
-.skill-page .choice { display: flex; gap: 11px; align-items: center; padding: 12px; border: 1px solid #c8dae9; border-radius: 8px; margin: 9px 0; cursor: pointer; }
-.skill-page .choice:has(input:checked) { border-color: #185FA5; background: #eaf4ff; }
-.skill-page .choice input { accent-color: #185FA5; }
+.skill-page .popup-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: flex-start;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #dfe8f1;
+}
 
-.skill-page .popup-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; margin-top: 22px; }
-.skill-page .popup-actions .btn:disabled { opacity: .5; cursor: not-allowed; }
+.skill-page .popup-heading h2 {
+  margin: 8px 0 0;
+  font-size: 22px;
+}
 
-.skill-page .result-area { text-align: center; padding: 26px 0 9px; }
-.skill-page .result-area h3 { margin: 0 0 8px; font-size: 22px; }
-.skill-page .score { font-size: 38px; color: #185FA5; font-weight: bold; margin: 10px 0; }
-.skill-page .result-area p { color: #576b7a; }
+.skill-page .close-popup {
+  border: none;
+  border-radius: 6px;
+  font-size: 27px;
+  width: 34px;
+  height: 34px;
+  background: #edf4fa;
+  color: #294960;
+}
 
-.skill-page .answer-review { border: 1px solid #d6e4ee; padding: 13px 15px; border-radius: 8px; margin: 12px 0; font-size: 14px; }
-.skill-page .answer-review h4 { margin: 0 0 9px; }
-.skill-page .answer-review p { margin: 6px 0; }
+.skill-page .question-progress {
+  display: flex;
+  justify-content: space-between;
+  color: #617182;
+  font-size: 13px;
+  gap: 10px;
+  margin: 20px 0 9px;
+}
 
-.skill-page .right-answer { color: #267448; }
-.skill-page .wrong-answer { color: #a34242; }
+.skill-page .progress-track {
+  height: 9px;
+  border-radius: 12px;
+  background: #e4eff9;
+  overflow: hidden;
+}
 
-.skill-page .profile-large { display: flex; gap: 12px; align-items: center; margin: 17px 0; }
-.skill-page .profile-large .avatar { width: 62px; height: 62px; font-size: 20px; }
-.skill-page .profile-large h3 { margin: 0 0 6px; }
-.skill-page .profile-large p { margin: 0; color: #627485; }
-.skill-page .profile-email { display: inline-block; margin-top: 12px; color: #185FA5; }
-.skill-page .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.skill-page .progress-fill {
+  height: 100%;
+  background: #185FA5;
+  border-radius: 12px;
+}
+
+.skill-page .question-heading {
+  font-size: 18px;
+  margin: 22px 0 14px;
+}
+
+.skill-page .choice {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #c8dae9;
+  border-radius: 8px;
+  margin: 9px 0;
+  cursor: pointer;
+}
+
+.skill-page .choice:has(input:checked) {
+  border-color: #185FA5;
+  background: #eaf4ff;
+}
+
+.skill-page .choice input {
+  accent-color: #185FA5;
+}
+
+.skill-page .popup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 22px;
+}
+
+.skill-page .popup-actions .btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.skill-page .result-area {
+  text-align: center;
+  padding: 26px 0 9px;
+}
+
+.skill-page .result-area h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.skill-page .score {
+  font-size: 38px;
+  color: #185FA5;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.skill-page .result-area p {
+  color: #576b7a;
+}
+
+.skill-page .answer-review {
+  border: 1px solid #d6e4ee;
+  padding: 13px 15px;
+  border-radius: 8px;
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.skill-page .answer-review h4 {
+  margin: 0 0 9px;
+}
+
+.skill-page .answer-review p {
+  margin: 6px 0;
+}
+
+.skill-page .right-answer {
+  color: #267448;
+}
+
+.skill-page .wrong-answer {
+  color: #a34242;
+}
+
+.skill-page .profile-large {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 17px 0;
+}
+
+.skill-page .profile-large .avatar {
+  width: 62px;
+  height: 62px;
+  font-size: 20px;
+}
+
+.skill-page .profile-large h3 {
+  margin: 0 0 6px;
+}
+
+.skill-page .profile-large p {
+  margin: 0;
+  color: #627485;
+}
+
+.skill-page .profile-email {
+  display: inline-block;
+  margin-top: 12px;
+  color: #185FA5;
+}
+
+.skill-page .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 @media (max-width: 850px) {
-  .skill-page .student-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skill-page .student-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 700px) {
-  .skill-page .page-container { padding: 15px 15px 45px; }
-  .skill-page .page-heading h1 { font-size: 29px; }
-  .skill-page .page-heading p { font-size: 15px; }
-  .skill-page .white-panel { padding: 20px 15px 22px; }
-  .skill-page .quiz-grid, .skill-page .student-grid, .skill-page .exchange-filters { grid-template-columns: 1fr; }
-  .skill-page .panel-intro { flex-direction: column; align-items: flex-start; }
-  .skill-page .section-tab { flex: 1; padding: 11px 9px; }
-  .skill-page .page-label { display: none; }
-  .skill-page .quiz-image { height: 130px; }
-  .skill-page .popup { padding: 19px; }
+  .skill-page .page-container {
+    padding: 15px 15px 45px;
+  }
+
+  .skill-page .page-heading h1 {
+    font-size: 29px;
+  }
+
+  .skill-page .page-heading p {
+    font-size: 15px;
+  }
+
+  .skill-page .white-panel {
+    padding: 20px 15px 22px;
+  }
+
+  .skill-page .quiz-grid,
+  .skill-page .student-grid,
+  .skill-page .exchange-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-page .panel-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skill-page .section-tab {
+    flex: 1;
+    padding: 11px 9px;
+  }
+
+  .skill-page .page-label {
+    display: none;
+  }
+
+  .skill-page .quiz-image {
+    height: 130px;
+  }
+
+  .skill-page .popup {
+    padding: 19px;
+  }
 }
