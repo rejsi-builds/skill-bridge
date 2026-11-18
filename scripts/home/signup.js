@@ -43,9 +43,11 @@ form.onsubmit = function () {
       email: email.value,
       major: major.value,
       interests: interests,
-      skills: skills.value
+      skills: skills.value,
+      password: password.value
     };
     localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("loggedInUser", JSON.stringify(user));   // the profile shows this user
 
     return true;
   } else {

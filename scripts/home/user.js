@@ -8,6 +8,14 @@ function getInitials(name) {
 
 function renderProfile() {
 
+    // show the user who logged in or signed up;
+    // if there is none, show the demo user (Alex) from store.js
+    let currentUser = Store.currentUser;
+    const saved = localStorage.getItem("loggedInUser");
+    if (saved !== null) {
+        currentUser = JSON.parse(saved);
+    }
+
     let interests = "";
 
     for (const interest of currentUser.interests) {
