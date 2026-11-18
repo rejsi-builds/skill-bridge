@@ -35,6 +35,11 @@ form.onsubmit = function () {
     return false;
   }
 
+  if (email.value == Store.demoUser.email) {
+    error.innerHTML = "This email belongs to the demo account. Please log in.";
+    return false;
+  }
+
   if (email.value.endsWith("@epoka.edu.al")) {
 
     // save the user in localStorage
