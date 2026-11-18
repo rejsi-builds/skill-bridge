@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBridge | Skill Exchange & Challenges</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/skill-exchange/skill-exchange.css">
+    <script src="../../scripts/skill-exchange/challenges.js" defer></script>
+</head>
+
+<body class="skill-page">
+    <main class="page-container">
+        <div class="page-links">
+            <a href="../../tabs/home/user.html">&larr; Back to profile</a>
+        </div>
+
+        <header class="page-heading">
+            <h1>Learn, challenge, connect.</h1>
+            <p>Test your knowledge and meet students who can help you grow.</p>
+        </header>
+
+        <section class="white-panel" aria-label="Skill Exchange and Challenges">
+            <div class="section-tabs">
+                <a href="challenges.html" class="section-tab active">Challenges</a>
+                <a href="skill-exchange.html" class="section-tab">Skill Exchange</a>
+            </div>
+
+            <!-- CHALLENGES TAB -->
+            <section id="challengesPanel">
+                <div class="panel-intro">
+                    <div>
+                        <h2>Explore Challenges</h2>
+                        <p>Choose a quiz to test your skills, or try something new.</p>
+                    </div>
+                    <label class="filter-label" for="quizFilter">
+                        <span class="sr-only">Filter quizzes</span>
+                        <select id="quizFilter">
+                            <option value="all">All quizzes</option>
+                            <option value="course">Course-related</option>
+                            <option value="public">Public quizzes</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="quiz-grid">
+                    <article class="quiz-card" data-category="course">
+                        <div class="quiz-image" aria-hidden="true"><span class="code-icon">&lt;/&gt;</span></div>
+                        <div class="card-labels">
+                            <span class="status-tag blue-tag">Course-related</span>
+                            <span>Beginner</span>
+                        </div>
+                        <h3>HTML, CSS & JavaScript Basics</h3>
+                        <p>Four short questions about the basics of web development.</p>
+                        <div class="quiz-details"><span>Topic: Programming</span><span>4 questions</span></div>
+                        <div class="quiz-details participants-count"><span>♙ <strong id="webParticipants">214</strong>
+                                participants</span></div>
+                        <button class="btn btn-main take-quiz" type="button" data-quiz="web">Take Quiz</button>
+                    </article>
+
+                    <article class="quiz-card" data-category="public">
+                        <div class="quiz-image" aria-hidden="true"><span class="world-icon">⌂</span></div>
+                        <div class="card-labels">
+                            <span class="status-tag green-tag">Public Quiz</span>
+                            <span>All students</span>
+                        </div>
+                        <h3>Architecture Basics</h3>
+                        <p>Four beginner-friendly questions about plans, drawings and buildings.</p>
+                        <div class="quiz-details"><span>Topic: Architecture</span><span>4 questions</span></div>
+                        <div class="quiz-details participants-count"><span>♙ <strong
+                                    id="generalParticipants">386</strong> participants</span></div>
+                        <button class="btn btn-main take-quiz" type="button" data-quiz="general">Take Quiz</button>
+                    </article>
+                </div>
+            </section>
+
+            <!-- QUIZ POPUP -->
+            <div id="quizModal" class="modal-overlay" hidden>
+                <div class="popup" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                    <div class="popup-heading">
+                        <div>
+                            <span id="modalTopic" class="status-tag blue-tag"></span>
+                            <h2 id="modalTitle"></h2>
+                        </div>
+                        <button type="button" class="close-popup" id="closeQuiz"
+                            aria-label="Close quiz">&times;</button>
+                    </div>
+                    <div id="quizContent"></div>
+                </div>
+            </div>
+
+</body>
+
+</html>
