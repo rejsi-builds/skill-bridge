@@ -39,11 +39,13 @@ function renderWelcome() {
         plural = "s";
     }
 
-    // The logged-in user's name. A new user has not taken a course yet, so no "back".
+    // The logged-in user's first name. A new user has not taken a course yet, so no "back".
+    let firstName = currentUser.fullName.split(" ")[0];
+
     if (taken === 0) {
-        document.getElementById("welcomeTitle").textContent = "Welcome, " + currentUser.fullName + "!";
+        document.getElementById("welcomeTitle").textContent = "Welcome, " + firstName + "!";
     } else {
-        document.getElementById("welcomeTitle").textContent = "Welcome back, " + currentUser.fullName + "!";
+        document.getElementById("welcomeTitle").textContent = "Welcome back, " + firstName + "!";
     }
 
     if (taken === 0) {
