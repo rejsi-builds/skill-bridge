@@ -63,12 +63,20 @@ function renderCourses() {
     }
 
     if (html === "") {
-        html = `<div class="col-12"><p class="text-muted mb-0">No courses match this filter.</p></div>`;
+        // A new account has no courses yet. Otherwise the filter hides them all.
+        let message = "No courses match this filter.";
+        if (myCourses.length === 0) {
+            message = "You do not teach any courses yet. Click \"Create New Course\" to start.";
+        }
+        html = `<div class="col-12"><p class="text-muted mb-0">${message}</p></div>`;
     }
 
     document.getElementById("courseList").innerHTML = html;
     document.getElementById("totalCourses").textContent = myCourses.length;
     document.getElementById("totalStudents").textContent = totalStudents;
+
+    // No courses (a new account) = no rating to show
+    document.getElementById("averageRating").textContent = myCourses.length === 0 ? "–" : "4.8 / 5";
 }
 
 
@@ -118,6 +126,7 @@ function saveCourse() {
         course = {
             id: nextId(courses),
             lecturer: currentUser.fullName,
+            lecturerEmail: currentUser.email,
             icon: "",
             category: "",
             chapters: [],

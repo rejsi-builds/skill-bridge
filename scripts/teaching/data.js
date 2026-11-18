@@ -1,9 +1,41 @@
 // DATA FOR THE TEACH PAGE.
-// The data comes from the shared store (scripts/shared/store.js), which the Learn pages
+// The data comes from the shared store (scripts/shared_LT/store.js), which the Learn pages
 // use too. The courses taught by the logged-in user are the ones shown on this page.
 // The other files only use the variables and functions defined here.
+//
+// The logged-in user is Store.currentUser (the user from login / sign up, or the demo
+// user Alex). Every course is linked to its lecturer by EMAIL (course.lecturerEmail),
+// so a new account has no courses, no students, no webinars and no assignments here.
 
 const currentUser = Store.currentUser;
+
+// Courses saved by an older version only have the lecturer's NAME. Give them the
+// lecturer's email (built the same way as in the store's demo data), so Store.isMyCourse()
+// can match by email and a new account with the same name does not get someone else's courses.
+function addMissingLecturerEmails() {
+
+    const store = Store.load();
+    let changed = false;
+
+    for (const course of store.courses) {
+        if (course.lecturerEmail !== undefined) {
+            continue;
+        }
+
+        if (course.lecturer === Store.demoUser.fullName) {
+            course.lecturerEmail = Store.demoUser.email;
+        } else {
+            course.lecturerEmail = course.lecturer.toLowerCase().replace(" ", ".") + "@epoka.edu.al";
+        }
+        changed = true;
+    }
+
+    if (changed) {
+        Store.save(store);
+    }
+}
+
+addMissingLecturerEmails();
 
 // ALL courses of the store (the page only shows the ones taught by the logged-in user)
 let courses = Store.load().courses;
@@ -42,7 +74,7 @@ function getCourse(id) {
 
 // Only the courses taught by the logged-in user
 function getMyCourses() {
-    return courses.filter(course => course.lecturer === currentUser.fullName);
+    return courses.filter(course => Store.isMyCourse(course));
 }
 
 // The students who took a course on the Learn page (always read fresh from the store)

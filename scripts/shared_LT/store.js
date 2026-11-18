@@ -105,6 +105,30 @@ const Store = {
         const data = Store.load();
         change(data);
         Store.save(data);
+    },
+
+    // Delete everything and go back to the demo data
+    reset: function () {
+        localStorage.removeItem(Store.key);
+        return Store.load();
+    },
+
+    // A lesson file is { name, url }. The url is a link (https://...) or a path inside the
+    // project (for example "files/notes.pdf"). basePath is the way back to the project
+    // folder from the current page: "../../" from tabs/learning, "../" from tabs.
+    // Used by the Learn pages to open the file a lecturer attached on the Teach page.
+    fileUrl: function (file, basePath) {
+        if (file === null || file === undefined) {
+            return null;
+        }
+
+        let url = file.url;
+
+        if (!url.startsWith("http") && !url.startsWith("/")) {
+            url = basePath + url;
+        }
+
+        return { name: file.name, url: url };
     }
 };
 
