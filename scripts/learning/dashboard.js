@@ -32,7 +32,6 @@ function showTab(name) {
 
 function renderWelcome() {
 
-    let firstName = currentUser.fullName.split(" ")[0];
     let taken = getTakenCourses().length;
 
     let plural = "";
@@ -40,7 +39,12 @@ function renderWelcome() {
         plural = "s";
     }
 
-    document.getElementById("welcomeTitle").textContent = "Welcome back, " + firstName + "!";
+    // The logged-in user's name. A new user has not taken a course yet, so no "back".
+    if (taken === 0) {
+        document.getElementById("welcomeTitle").textContent = "Welcome, " + currentUser.fullName + "!";
+    } else {
+        document.getElementById("welcomeTitle").textContent = "Welcome back, " + currentUser.fullName + "!";
+    }
 
     if (taken === 0) {
         document.getElementById("welcomeText").textContent =

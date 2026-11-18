@@ -1,7 +1,8 @@
 /* DATA FOR THE LEARN PAGES.
-Reads the courses and enrollments from the shared store (scripts/shared/store.js), which the Teach page uses too.
+Reads the courses and enrollments from the shared store (scripts/shared_LT/store.js), which the Teach page uses too.
 The other files only use the variables and functions defined here. */
 
+// The user who logged in or signed up (a new account has no enrollments, so nothing is taken yet)
 const currentUser = Store.currentUser;
 
 function toDate(text) {
@@ -27,19 +28,12 @@ Rules that link the two sides:
 - a course you already took stays visible, even if the lecturer archives it
 - cancelled webinars are not shown */
 
-const HIDE_OWN_COURSES = false;
-
 function buildCourses() {
 
     let store = Store.load();
     let list = [];
 
     store.courses.forEach((course) => {
-
-        // "return" inside forEach means: skip this course
-        if (HIDE_OWN_COURSES && course.lecturer === currentUser.fullName) {
-            return;
-        }
 
         // Count the students and find my enrollment (null if I did not take the course)
         let students = 0;
@@ -49,7 +43,7 @@ function buildCourses() {
             if (enrollment.courseId === course.id) {
                 students++;
 
-                if (enrollment.email === currentUser.email) {
+                if (enrollment.email.toLowerCase() === currentUser.email.toLowerCase()) {
                     myEnrollment = enrollment;
                 }
             }
@@ -149,7 +143,7 @@ function saveData() {
             let index = -1;
 
             store.enrollments.forEach((enrollment, i) => {
-                if (enrollment.email === currentUser.email && enrollment.courseId === course.id) {
+                if (enrollment.email.toLowerCase() === currentUser.email.toLowerCase() && enrollment.courseId === course.id) {
                     index = i;
                 }
             });
