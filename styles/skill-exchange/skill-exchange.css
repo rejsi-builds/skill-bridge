@@ -84,6 +84,7 @@
 .skill-page .section-tab {
   border: 0;
   border-bottom: 3px solid transparent;
+  border-radius: 8px 8px 0 0;
   padding: 10px 20px 13px;
   margin-bottom: -2px;
   background: transparent;
@@ -98,8 +99,9 @@
 }
 
 .skill-page .section-tab:hover {
-  color: #185FA5;
+  background-color: #E6F1FB;
 }
+
 
 .skill-page .section-tab:focus-visible,
 .skill-page button:focus-visible,
