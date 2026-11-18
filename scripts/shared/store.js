@@ -10,18 +10,45 @@
 //   courses      - written by the lecturer (Teach page)
 //   enrollments  - written by the student (Learn page): the course they took,
 //                  the lessons they ticked and the assignments they submitted
+//
+// Every enrollment is linked to a user by EMAIL and every course to its lecturer, so a
+// new account (sign up) has no courses taken, no courses taught, no webinars and no tasks.
 
 const Store = {
 
     key: "skillbridge_store_v1",
 
-    // The logged-in user (demo)
-    currentUser: {
+    // The demo account (Alex). It owns all the demo courses below.
+    // Used when nobody has logged in or signed up.
+    demoUser: {
         fullName: "Alex Johnson",
         email: "alex.johnson@epoka.edu.al",
         major: "Software Engineering",
         interests: ["Programming", "Design", "Photography"],
         skills: "Java, Git"
+    },
+
+    // The user who logged in or signed up ("loggedInUser" is saved by login.js / signup.js).
+    // Falls back to the demo user.
+    getCurrentUser: function () {
+        try {
+            const saved = JSON.parse(localStorage.getItem("loggedInUser"));
+            if (saved !== null && saved.fullName && saved.email) {
+                return saved;
+            }
+        } catch (error) {
+            // damaged value: ignore it
+        }
+        return Store.demoUser;
+    },
+
+    // Is this course taught by the logged-in user?
+    // Courses are linked by email (old saved courses only have the name).
+    isMyCourse: function (course) {
+        if (course.lecturerEmail !== undefined) {
+            return course.lecturerEmail.toLowerCase() === Store.currentUser.email.toLowerCase();
+        }
+        return course.lecturer === Store.currentUser.fullName;
     },
 
     // Icon for each category (used when a lecturer creates a course)
@@ -43,7 +70,7 @@ const Store = {
     },
 
 
-    // ---------- Load / save ----------
+    // Load / save
 
     // Get everything from the browser. The first time, start with the demo data.
     load: function () {
@@ -86,11 +113,10 @@ const Store = {
         return Store.load();
     },
 
-
-    // ---------- Lesson files ----------
-    // A file is { name, url }. The url is a link (https://...) or a path inside the
+    // A lesson file is { name, url }. The url is a link (https://...) or a path inside the
     // project (for example "files/notes.pdf"). basePath is the way back to the project
     // folder from the current page: "../../" from tabs/learning, "../" from tabs.
+    // Used by the Learn pages to open the file a lecturer attached on the Teach page.
     fileUrl: function (file, basePath) {
         if (file === null || file === undefined) {
             return null;
@@ -107,7 +133,7 @@ const Store = {
 };
 
 
-// ---------- Demo data ----------
+// Demo data
 
 // Date as "YYYY-MM-DD", n days from today (so the demo dates always look current)
 function dayOffset(n) {
@@ -122,7 +148,7 @@ function dayOffset(n) {
 
 function makeDemoData() {
 
-    const currentUser = Store.currentUser;
+    const currentUser = Store.demoUser;
     const courses = [];
     const enrollments = [];
 
@@ -191,6 +217,7 @@ function makeDemoData() {
             id: id,
             title: def.title,
             lecturer: def.lecturer,
+            lecturerEmail: def.lecturer.toLowerCase().replace(" ", ".") + "@epoka.edu.al",
             category: def.category,
             difficulty: def.difficulty,
             description: def.description,
@@ -222,7 +249,7 @@ function makeDemoData() {
     }
 
 
-    // ----- Courses taught by other lecturers (the logged-in user is a student here) -----
+    // Courses taught by other lecturers (the logged-in user is a student here)
 
     addCourse({
         title: "Python for Beginners",
@@ -255,8 +282,7 @@ function makeDemoData() {
                     },
                     {
                         title: "Lesson 4: Loops", minutes: 18, done: false,
-                        text: "A loop repeats code. A for loop goes through a list, a while loop repeats until a condition is false.\nRead the attached cheat sheet for examples.",
-                        file: { name: "python-loops-cheatsheet.pdf", url: "files/python-loops-cheatsheet.pdf" }
+                        text: "A loop repeats code. A for loop goes through a list, a while loop repeats until a condition is false."
                     }
                 ]
             }
@@ -289,8 +315,7 @@ function makeDemoData() {
                     },
                     {
                         title: "Lesson 2: Exposure Triangle", minutes: 20, done: false,
-                        text: "Exposure depends on three settings: aperture, shutter speed and ISO. The attached diagram shows how they work together.",
-                        file: { name: "exposure-triangle.png", url: "files/exposure-triangle.png" }
+                        text: "Exposure depends on three settings: aperture, shutter speed and ISO."
                     },
                     {
                         title: "Lesson 3: Focus Modes", minutes: 12, done: false,
@@ -397,11 +422,12 @@ function makeDemoData() {
     });
 
 
-    // ----- Courses taught by the logged-in user (shown on the Teach page) -----
+    // Courses taught by the logged-in user (shown on the Teach page)
 
     addCourse({
         title: "Java Essentials",
         lecturer: currentUser.fullName,
+        lecturerEmail: currentUser.email,
         category: "Programming",
         difficulty: "Beginner",
         description: "Learn Java from your first program to your first classes.",
@@ -451,6 +477,7 @@ function makeDemoData() {
     addCourse({
         title: "Git for Teams",
         lecturer: currentUser.fullName,
+        lecturerEmail: currentUser.email,
         category: "Programming",
         difficulty: "Intermediate",
         description: "Branches, merges and pull requests for group projects.",
@@ -473,6 +500,7 @@ function makeDemoData() {
     addCourse({
         title: "Mobile Photography",
         lecturer: currentUser.fullName,
+        lecturerEmail: currentUser.email,
         category: "Photography",
         difficulty: "Beginner",
         description: "Take better photos with the phone you already have.",
@@ -504,3 +532,7 @@ function makeDemoData() {
 
     return { courses: courses, enrollments: enrollments };
 }
+
+
+// The user of this page. Set once the store above exists.
+Store.currentUser = Store.getCurrentUser();
