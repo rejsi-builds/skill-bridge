@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkillBridge | Skill Exchange & Challenges</title>
   <link rel="stylesheet" href="../../styles/style.css">
   <link rel="stylesheet" href="../../styles/skill-exchange/skill-exchange.css">
+  <script src="../../scripts/shared/store.js" defer></script>
   <script src="../../scripts/skill-exchange/skill-exchange.js" defer></script>
 </head>
 
@@ -13,7 +15,6 @@
   <main class="page-container">
     <div class="page-links">
       <a href="../../tabs/home/user.html">&larr; Back to profile</a>
-      <span class="page-label">SkillBridge Student Community</span>
     </div>
 
     <header class="page-heading">
@@ -22,62 +23,13 @@
     </header>
 
     <section class="white-panel" aria-label="Skill Exchange and Challenges">
-      <div class="section-tabs" role="tablist" aria-label="Explore SkillBridge">
-        <button type="button" class="section-tab active" id="challengesTab"
-                role="tab" aria-selected="true" aria-controls="challengesPanel">Challenges</button>
-        <button type="button" class="section-tab" id="exchangeTab"
-                role="tab" aria-selected="false" aria-controls="exchangePanel">Skill Exchange</button>
+      <div class="section-tabs">
+        <a href="challenges.html" class="section-tab">Challenges</a>
+        <a href="skill-exchange.html" class="section-tab active">Skill Exchange</a>
       </div>
 
-      <!-- CHALLENGES TAB -->
-      <section id="challengesPanel" role="tabpanel" aria-labelledby="challengesTab">
-        <div class="panel-intro">
-          <div>
-            <h2>Explore Challenges</h2>
-            <p>Choose a quiz to test your skills, or try something new.</p>
-          </div>
-          <label class="filter-label" for="quizFilter">
-            <span class="sr-only">Filter quizzes</span>
-            <select id="quizFilter">
-              <option value="all">All quizzes</option>
-              <option value="course">Course-related</option>
-              <option value="public">Public quizzes</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="quiz-grid">
-          <article class="quiz-card" data-category="course">
-            <div class="quiz-image" aria-hidden="true"><span class="code-icon">&lt;/&gt;</span></div>
-            <div class="card-labels">
-              <span class="status-tag blue-tag">Course-related</span>
-              <span>Beginner</span>
-            </div>
-            <h3>HTML, CSS & JavaScript Basics</h3>
-            <p>Four short questions about the basics of web development.</p>
-            <div class="quiz-details"><span>Topic: Programming</span><span>4 questions</span></div>
-            <div class="quiz-details ratings"><span>★ <strong>4.8 / 5</strong></span><span>♙ <strong id="webParticipants">214</strong> participants</span></div>
-            <button class="btn btn-main take-quiz" type="button" data-quiz="web">Take Quiz</button>
-          </article>
-
-          <article class="quiz-card" data-category="public">
-            <div class="quiz-image" aria-hidden="true"><span class="world-icon">⌂</span></div>
-            <div class="card-labels">
-              <span class="status-tag green-tag">Public Quiz</span>
-              <span>All students</span>
-            </div>
-            <h3>Architecture Basics</h3>
-            <p>Four beginner-friendly questions about plans, drawings and buildings.</p>
-            <div class="quiz-details"><span>Topic: Architecture</span><span>4 questions</span></div>
-            <div class="quiz-details ratings"><span>★ <strong>4.6 / 5</strong></span><span>♙ <strong id="generalParticipants">386</strong> participants</span></div>
-            <button class="btn btn-main take-quiz" type="button" data-quiz="general">Take Quiz</button>
-          </article>
-        </div>
-        <p class="demo-note">Quiz ratings and participation numbers are examples for this student project.</p>
-      </section>
-
       <!-- SKILL EXCHANGE TAB -->
-      <section id="exchangePanel" role="tabpanel" aria-labelledby="exchangeTab" hidden>
+      <section id="exchangePanel">
         <div class="panel-intro">
           <div>
             <h2>Find Your Skill Match</h2>
@@ -118,24 +70,9 @@
           <p>These students want to learn something you already know.</p>
         </div>
         <div id="learnersList" class="student-grid"></div>
-        <p class="demo-note">All students and email addresses shown are fictional examples. Follows and connections are local to this demo.</p>
       </section>
     </section>
   </main>
-
-  <!-- QUIZ POPUP -->
-  <div id="quizModal" class="modal-overlay" hidden>
-    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="popup-heading">
-        <div>
-          <span id="modalTopic" class="status-tag blue-tag"></span>
-          <h2 id="modalTitle"></h2>
-        </div>
-        <button type="button" class="close-popup" id="closeQuiz" aria-label="Close quiz">&times;</button>
-      </div>
-      <div id="quizContent"></div>
-    </div>
-  </div>
 
   <!-- STUDENT PROFILE POPUP -->
   <div id="profileModal" class="modal-overlay" hidden>
@@ -148,4 +85,5 @@
     </div>
   </div>
 </body>
+
 </html>
